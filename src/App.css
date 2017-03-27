@@ -1,0 +1,318 @@
+
+@font-face {
+  font-family: 'DINPro-Light';
+  src: url('./fonts/DINPro-Light.otf')  format('opentype'),
+       url('./fonts/DINPro-Light.ttf')  format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'DINPro-Regular';
+  src: url('./fonts/DINPro-Regular.otf')  format('opentype'),
+       url('./fonts/DINPro-Regular.ttf')  format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'DINPro-Medium';
+  src: url('./fonts/DINPro-Medium.otf')  format('opentype'),
+       url('./fonts/DINPro-Medium.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'DINPro-Bold';
+  src: url('./fonts/DINPro-Bold.otf')  format('opentype'),
+       url('./fonts/DINPro-Bold.ttf')  format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  font-family:'DINPro-Light',
+  Arial,sans-serif;
+  text-rendering:optimizelegibility;
+  line-height:1.2em;
+}
+
+p {
+  font-family:'DINPro-Light';
+}
+
+.clear {
+  clear: both;
+}
+/**************************** HEADER SECTION **************************************/
+
+.headerSection-cover {
+  width: 100%;
+  height: 95vh;
+}
+
+.navbar {
+  z-index: 10;
+  background-color: transparent;
+  background: transparent;
+  border-color: transparent;
+  color: white;
+  margin-top: 20px;
+}
+
+.navBrandImage {
+  padding: 0px;
+}
+
+.navItem {
+  color: white;
+  text-transform: uppercase;
+}
+
+#video-home {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 95vh;
+  overflow-y: hidden;
+}
+
+#video-home .overlay {
+  background: rgba(58,58,83,0.65);
+  width: 100%;
+  position: absolute;
+  top: 0;
+  height: 95vh;
+}
+
+#video-home .cover {
+  width: 100%;
+  height: 100%;
+  background: url('~/images/cover.png');
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.hiddenCover {
+  display: 'none';
+}
+
+.video {
+  width: 100%;
+}
+
+.video-caption-container {
+  z-index: 10;
+  position: relative;
+  color: white;
+  text-align: center;
+  width: 100%;
+  height: 80%;
+}
+
+.video-caption {
+  position: absolute;
+  top: 50%; 
+  /*left: 50%;*/
+  transform: translate(50%,-50%);
+}
+
+
+.bigHeader {
+  font-size: 60px;
+  font-family: 'DINPro-Light'
+}
+.smallHeader {
+  font-size: 18px;
+}
+.technologies {
+  font-size: 19px;
+  background: #009c4e;
+  padding: 5px;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: 'DINPro-Medium';
+}
+
+.work-with-us {
+  border-style: solid;
+  padding: 10px;
+  text-transform: uppercase;
+  margin-top: 15px;
+  font-size: 20px;
+}
+
+/********************************** HOW WE WORK **********************************/
+.hww-container {
+  width: 100%;
+  height: 95vh;
+}
+
+.hww-container-caption {
+  color: grey;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.hww-divider {
+  height: 1px;
+  background-color: grey;
+  width: 65px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+}
+
+.hww-subtitle {
+  font-size: 20px;
+}
+
+.hww-bottom {
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hww-img-container {
+  position:relative;
+  width: 50%;
+  float: left;
+}
+.hww-img {
+  cursor: pointer;
+  display: block;
+  position:absolute;
+  width: 350px;
+}
+
+.hww-img.fadeimg-enter {
+    opacity: 0.01;
+}
+.hww-img.fadeimg-enter.fadeimg-enter-active {
+  opacity: 1.0;
+  transition: opacity 1s ease-in;
+}
+.hww-img.fadeimg-leave {
+  /* Completely hide the button while it's being animated and before it's removed from the DOM. */
+  /*visibility: hidden;
+  height: 0px;
+  width: 0px;*/
+  
+  /* Starting opacity */
+  opacity: 1.0;
+}
+.hww-img.fadeimg-leave.fadeimg-leave-active {
+  /* Ending opacity: 
+  Trigger opacity change so the "transitionend" event will fire, causing React to remove from the DOM. */
+  opacity: 0;
+  transition: opacity 1s ease-in;
+}
+
+.hww-img-inline {
+  cursor: pointer;
+  display: block;
+  position:absolute;
+  width: 250px;
+  top: 50px;
+  left: 50px;
+}
+
+.hww-img-inline.fadeimg-enter {
+  opacity: 0.01;
+}
+.hww-img-inline.fadeimg-enter.fadeimg-enter-active {
+  opacity: 1.0;
+  transition: opacity 1s ease-in;
+}
+.hww-img-inline.fadeimg-leave {
+  /* Completely hide the button while it's being animated and before it's removed from the DOM. */
+  visibility: hidden;
+  height: 0px;
+  width: 0px;
+  
+  /* Starting opacity */
+  opacity: 1.0;
+}
+.hww-img-inline.fadeimg-leave.fadeimg-leave-active {
+  /* Ending opacity: 
+  Trigger opacity change so the "transitionend" event will fire, causing React to remove from the DOM. */
+  opacity: 0;
+  transition: opacity 1s ease-in;
+}
+
+.hww-text {
+  width: 50%;
+  float: right;
+  height: 290px;
+  position: relative;
+}
+
+.hww-text-inner.fadeimg-enter {
+  opacity: 0.01;
+}
+.hww-text-inner.fadeimg-enter.fadeimg-enter-active {
+  opacity: 1.0;
+  transition: opacity 1.5s ease-in;
+}
+.hww-text-inner.fadeimg-leave {
+  /* Completely hide the button while it's being animated and before it's removed from the DOM. */
+  visibility: hidden;
+  height: 0px;
+  width: 0px;
+  
+  /* Starting opacity */
+  opacity: 1.0;
+}
+.hww-text-inner.fadeimg-leave.fadeimg-leave-active {
+  /* Ending opacity: 
+  Trigger opacity change so the "transitionend" event will fire, causing React to remove from the DOM. */
+  opacity: 0;
+  transition: opacity 1s ease-in;
+}
+
+.hww-text-title {
+  font-family: 'DINPro-Medium';
+  margin-bottom: 25px;
+
+}
+
+.hww-text-text {
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+
+.hww-arrow-container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  cursor: pointer;
+}
+
+.hww-arrow {
+  margin: 10px;
+}
+
+.hww-arrow-hidden {
+  margin: 10px;
+  visibility: hidden;
+}
+
+/********************************** Portfolio **********************************/
+.portfolio-container {
+  background-color: black;
+}
+
+.portfolio-img {
+  margin: 20px;
+  float: left;
+  width: 450px;
+}
+
+.portfolio-client-cont {
+  height: 800px;
+}
+.portfolio-client-logo-cont {
+  width: 30%;
+  float: left;
+}

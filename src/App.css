@@ -577,3 +577,15 @@ span {
   color: green;
   float: right;
 }
+
+/******************** FOOTER ***********************/
+.f-icon-img {
+  width: 20px;
+  height: 20px; 
+}
+.footer-xseed { 
+  float: left;
+}
+.footer-medias { 
+  float: right;
+}

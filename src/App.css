@@ -39,6 +39,10 @@ p {
   font-family:'DINPro-Light';
 }
 
+span {
+  font-family:'DINPro-Regular';
+}
+
 .clear {
   clear: both;
 }
@@ -270,6 +274,9 @@ p {
   transition: opacity 1s ease-in;
 }
 
+.process-slider-inside-container {
+  height: 350px;
+}
 .hww-text-title {
   font-family: 'DINPro-Medium';
   margin-bottom: 25px;
@@ -291,6 +298,7 @@ p {
 
 .hww-arrow {
   margin: 10px;
+  float: left;
 }
 
 .hww-arrow-hidden {
@@ -303,16 +311,269 @@ p {
   background-color: black;
 }
 
+.portfolio-projects {
+  -webkit-column-count: 2;
+  -moz-column-count: 2;
+  column-count: 2;
+  -webkit-column-gap: 0;
+  -moz-column-gap: 0;
+  column-gap: 0;
+  width: 80vw;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.portfolio-project-container {
+  width: 100%;
+  height: 100%;
+  float: left;
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 35px;
+  position: relative;
+}
+
 .portfolio-img {
   margin: 20px;
   float: left;
   width: 450px;
 }
 
+.portfolio-project-name {
+    position: absolute;
+    top: 415px;
+    left: 35px;
+    color: white;
+    background-color: green;
+    padding: 5px;
+}
+
+.portfolio-our-work {
+  font-size: 40px;
+  color: green;
+}
+
+.portfolio-our-work-sub {
+  font-size: 15px;
+  color: white;
+}
+
 .portfolio-client-cont {
+  margin-top: 50px;
+  width: 80vw;
+  margin-right: auto;
+  margin-left: auto;
   height: 800px;
+  text-align: center;
+  color: white;
 }
 .portfolio-client-logo-cont {
   width: 30%;
   float: left;
+}
+.portfolio-logo-img {
+  
+}
+
+/******************************** Testimonials ********************************/
+.testimonials-container {
+  width: 100%;
+  height: 90vh;
+  background-color: white;
+}
+
+.testimonial-slider-container {
+  width: 75%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.testimonial-inside-slider {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.testimonial-img-circle {
+  border-radius: 50%;
+  width: 250px;
+  height: 250px;
+  border: 5px solid green;
+}
+
+.testimonial-div-image { 
+  
+  float: left;
+  text-align: right;
+  padding-right: 40px;
+}
+
+.testimonial-div-text { 
+  width: 55%;
+  float: left;
+  text-align: left;
+  font-size: 18px;
+  padding-top: 50px;
+  color: black;
+}
+
+.testimonial-text {
+}
+
+.testimonial-name {
+  font-family: 'DINPro-Bold';
+}
+
+.testimonial-company {
+  font-style: italic;
+}
+/******************************** Team ********************************/
+.team-container {
+  width: 100%;
+  height: 90vh;
+  background: url('./images/teamHome_BG.png');
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-position: 0px -275px;
+  background-repeat: no-repeat;
+}
+
+.team-caption-container {
+  z-index: 10;
+  position: relative;
+  color: white;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+}
+
+.team-caption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+}
+
+.team-bigHeader {
+  font-size: 60px;
+  font-family: 'DINPro-Bold'
+}
+
+.team-smallHeader {
+  font-size: 18px;
+}
+
+.team-button {
+  font-family:'DINPro-Regular';
+    border-style: solid;
+    padding: 10px;
+    text-transform: uppercase;
+    margin-top: 15px;
+    font-size: 20px;
+    margin-right: 25px;
+    margin-left: 25px;
+    width: 37%;
+    float: left;
+}
+
+.team-middle-button {
+  width: 5%;
+  float: left;
+  margin-top: 25px;
+  font-size: 20px;
+}
+
+/******************************** Contact ********************************/
+.contact-container {
+  width: 100%;
+  height: 100vh;
+}
+
+.contact-container-caption {
+  color: grey;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.contact-divider {
+  height: 1px;
+  background-color: grey;
+  width: 65px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+}
+
+.contact-subtitle {
+  font-size: 20px;
+}
+
+.contact-form {
+  width: 430px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.contact-name {
+  text-align: center;
+  width: 50%;
+  float: left;
+}
+
+.contact-email {
+  text-align: center;
+  width: 50%;
+  float: left;
+}
+
+.contact-message {
+  padding-top: 60px;
+  width: 100%;
+  text-align: center;
+}
+
+.contact-input-text {
+  height: 35px;
+}
+
+.contact-textarea {
+  width: 392px;
+  height: 130px;
+  resize: none;
+}
+
+.contact-button-container {
+  width: 100%;
+  padding-right: 20px;
+  text-align: right;
+  margin-top: 20px;
+}
+
+.contact-send-button {
+  color: white;
+  background-color: green;
+  height: 45px;
+  text-transform: uppercase;
+  width: 75px;
+  font-size: 15px;
+  font-family: 'DINpro-Medium';
+}
+
+.contact-send-button.disabled {
+  background-color: grey;
+}
+
+.concact-error {
+  color: red;
+  float: right;
+}
+
+.concact-success {
+  color: green;
+  float: right;
 }

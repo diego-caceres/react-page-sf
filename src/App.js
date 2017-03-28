@@ -5,6 +5,9 @@ import ScrollableAnchor, { configureAnchors } from 'react-scrollable-anchor'
 import HeaderSection from './components/HeaderSection.js';
 import HowWeWork from './components/HowWeWork.js';
 import Portfolio from './components/Portfolio.js';
+import TestimonialsSection from './components/Testimonials.js';
+import Team from './components/Team.js';
+import Contact from './components/Contact.js';
 
 // Offset all anchors by -60 to account for a fixed header
 // and scroll more quickly than the default 400ms
@@ -32,15 +35,21 @@ class App extends Component {
 			</div>
         </ScrollableAnchor>
 
+        <ScrollableAnchor id={'test'}>
+			<div> 
+				<TestimonialsSection />				
+			</div>
+        </ScrollableAnchor>
+
         <ScrollableAnchor id={'team'}>
 			<div> 
-				
+				<Team />
 			</div>
         </ScrollableAnchor>
 
         <ScrollableAnchor id={'contact'}>
 			<div> 
-				
+				<Contact />
 			</div>
         </ScrollableAnchor>
       </div>

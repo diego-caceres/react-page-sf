@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
+import Slider from 'react-slick';
 //import ReactCSSTransitionGroup from 'react-addons-transition-group';
-import ReactTimeout from 'react-timeout'
+import ReactTimeout from 'react-timeout';
 import ReactCSSTransitionGroup from 'react/lib/ReactCSSTransitionGroup';
 
 import img1 from '../../images/hhw_01.png';
@@ -28,7 +29,116 @@ let texts = [
 	`Launch is a critical time, and we take care every aspect, solving any road block strategically. When your project goes live and the user-base grows, we are standing by to provide any additional support your product might need. Making your business grow, is our business too.`,
 	`The only missing step is where you come in. Got doubts, questions or an amazing project you want to shoot into the skies? We want to hear from you. `];
 
+
 class ProcessImage extends Component {
+  constructor(props) {
+    super(props)
+    this.next = this.next.bind(this)
+    this.previous = this.previous.bind(this)
+  }
+  next() {
+    this.slider.slickNext()
+  }
+  previous() {
+    this.slider.slickPrev()
+  }
+  render () {
+    const settings = {
+      dots: true,
+      infinite: true,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      autoplay: true,
+      autoplaySpeed: 5000,
+      adaptiveHeight: true,
+      speed: 2000,
+      fade: true,
+      dots: false
+    };
+    return (
+      <div>
+        
+        <Slider ref={c => this.slider = c } {...settings}>
+          <div className="process-slider-inside-container"> 
+            <HowWeWorkStep image={img1} inlineImage={imgInline1}
+              title={titles[0]} text={texts[0]}
+              onPreviousClick={this.previous}
+              onNextClick={this.next}
+            /> 
+          </div>
+          <div className="process-slider-inside-container"> 
+            <HowWeWorkStep image={img2} inlineImage={imgInline2}                        
+              title={titles[1]} text={texts[1]}
+              onPreviousClick={this.previous}
+              onNextClick={this.next}
+            /> 
+          </div>
+          <div className="process-slider-inside-container"> 
+            <HowWeWorkStep image={img3} inlineImage={imgInline3}
+              title={titles[2]} text={texts[2]}
+              onPreviousClick={this.previous}
+              onNextClick={this.next}
+            /> 
+          </div>
+          <div className="process-slider-inside-container"> 
+            <HowWeWorkStep image={img4} inlineImage={imgInline4}
+              title={titles[3]} text={texts[3]}
+              onPreviousClick={this.previous}
+              onNextClick={this.next}
+            /> 
+          </div>
+          <div className="process-slider-inside-container"> 
+            <HowWeWorkStep image={img5} inlineImage={imgInline5}
+              title={titles[4]} text={texts[4]}
+              onPreviousClick={this.previous}
+              onNextClick={this.next}
+            /> 
+          </div>
+          <div className="process-slider-inside-container"> 
+            <HowWeWorkStep image={img6} inlineImage={imgInline6}
+              title={titles[5]} text={texts[5]}
+              onPreviousClick={this.previous}
+              onNextClick={this.next}
+            /> 
+          </div>          
+        </Slider>
+      </div>
+    );
+  }
+}
+
+const HowWeWorkStep = (props) => {
+    return ( 
+        <div className="hww-bottom">
+            <div className="hww-img-container">
+                <img className="hww-img" 
+                alt="How we work" src={props.image} /*onClick={this.nextStep}*/ draggable="false" />
+                <img className="hww-img-inline" /*key={this.state.index}*/
+                    alt="How we work" src={props.inlineImage} /*onClick={this.nextStep}*/ draggable="false" />
+            </div>
+            <div className="hww-text">                
+                <div className="hww-text-inner" /*key={this.state.index}*/>
+                    <h1 className="hww-text-title">{props.title}</h1>
+                    <p className="hww-text-text">{props.text}</p>              
+                </div>
+                <div className="hww-arrow-container">
+                    <img className="hww-arrow" 
+                          src={arrowBefore} 
+                          draggable="false"
+                          onClick={props.onPreviousClick} /> 
+                    <img className="hww-arrow" 
+                          src={arrowNext} 
+                          draggable="false" 
+                          onClick={props.onNextClick} />
+                </div>
+            </div>
+        </div>
+    )
+}
+
+export default ProcessImage;
+
+/*class ProcessImage extends Component {
     state = {
     	on: false,
 		index: 1,
@@ -195,4 +305,4 @@ class ProcessImage extends Component {
     }
 };
 
-export default ReactTimeout(ProcessImage);
+export default ReactTimeout(ProcessImage);*/

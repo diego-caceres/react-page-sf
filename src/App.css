@@ -958,6 +958,7 @@ a.team-button-a, a.team-button-a:visited{
 
   .portfolio-img {
     margin: 0; 
+    width: 100%;
   }
 
   .p-overlay {

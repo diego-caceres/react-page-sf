@@ -794,25 +794,26 @@ a.team-button-a, a.team-button-a:visited{
 
 /***************************** Media Querys **********************************/
 
-.navbar-default .navbar-toggle .icon-bar {
-  background-color: white;
-}
-
-.navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover {
-  background-color: transparent;  
-}
-
-.navbar-default .navbar-toggle {
-  border-color: transparent;
-}
-
-.navbar-default .navbar-collapse, .navbar-default .navbar-form {
-  border-color: transparent;
-  background-color: black;
-}
 
 @media (max-width:480px) {
   
+  .navbar-default .navbar-toggle .icon-bar {
+    background-color: white;
+  }
+
+  .navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover {
+    background-color: transparent;  
+  }
+
+  .navbar-default .navbar-toggle {
+    border-color: transparent;
+  }
+
+  .navbar-default .navbar-collapse, .navbar-default .navbar-form {
+    border-color: transparent;
+    background-color: black;
+  }
+
   /*************************** HEADER SECTION **********************/
   .navbar-brand {
     padding-top: 0;

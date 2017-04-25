@@ -6,7 +6,7 @@ const HowWeWork = () => (
 	<section className="hww-container">
 		<div className="hww-container-caption">
 			<div className="hww-caption">
-				<h1> How we work </h1>
+				<h1 className="hww-title"> How we work </h1>
 				<div className="hww-divider"></div>
 				<p className="hww-subtitle"> Take an in-depth look at the things we do </p>
 				<p className="hww-subtitle"> and how we do them. </p>

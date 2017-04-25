@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom'
 
 
 const Team = () => (
@@ -10,10 +11,17 @@ const Team = () => (
                 <p className="team-smallHeader">We believe in one two three many reasons why our</p>
                 <p className="team-smallHeader">team is our most valuable asset.</p>
                 <br/><br/>
-                <p className="team-button"> Meet Them </p>
+                <Link className="team-button-a" to={'/team#home'}>
+                    
+                        <p className="team-button"> Meet Them </p>
+                    
+                </Link>
+                <div className="clear" />
                 <p className="team-middle-button"> or </p>
-            	<p className="team-button"> Join us </p>
-                
+            	<div className="clear" />
+                <a className="team-button-a" href="#contact" >
+                    <p className="team-button"> Join us </p>
+                </a>
             </div>
         </div>
 	</section>

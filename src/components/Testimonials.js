@@ -13,7 +13,7 @@ const Testimonial = (props) => {
 				<p className="testimonial-text"> 
 					{props.text}
 				</p>
-				<br />
+				<br className="testimonial-break-line" />
 				<p className="testimonial-name"> {props.name} </p>
 				<p className="testimonial-company"> {props.company} </p>
 			</div>
@@ -25,10 +25,11 @@ class TestimonialsSlider extends React.Component {
 	render () {
 	    const settings = {
 	      dots: true,
+	      dotsClass: 'testimonial-dots',
 	      infinite: true,
 	      slidesToShow: 1,
 	      slidesToScroll: 1,
-	      autoplay: true,
+	      //autoplay: true,
 	      autoplaySpeed: 3000,
 	      speed: 2000
 	    };
@@ -66,7 +67,7 @@ const TestimonialsSection = () => (
 	<section className="testimonials-container">
 		<div className="contact-container-caption">
 			<div >
-				<h1> Testimonials </h1>
+				<h1 className="testimonials-title"> Testimonials </h1>
 				<div className="contact-divider"></div>
 				<p className="contact-subtitle"> Know the impact, first hand from our very own </p>
 				<p className="contact-subtitle"> partners in crime </p>

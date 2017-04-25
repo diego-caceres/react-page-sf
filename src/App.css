@@ -69,6 +69,9 @@ span {
 .navItem {
   color: white;
   text-transform: uppercase;
+  size: 16px;
+  font-family:'DINPro-Light';
+  letter-spacing: 5px;
 }
 
 #video-home {
@@ -124,26 +127,58 @@ span {
 
 .bigHeader {
   font-size: 60px;
-  font-family: 'DINPro-Light'
+  font-family: 'DINPro-Light';
+  margin-bottom: 0px;
+  
 }
+.bigHeader.firstLine {
+  margin-top: 20px;
+}
+
 .smallHeader {
   font-size: 18px;
 }
+
+.smallHeader.firstLine {
+  margin-top: 10px
+}
+
 .technologies {
-  font-size: 19px;
-  background: #009c4e;
+  font-size: 16px;
+  background: #00c964;
   padding: 5px;
   margin-left: auto;
   margin-right: auto;
-  font-family: 'DINPro-Medium';
+  font-family: 'DINPro-Regular';  
+}
+
+a.work-with-us-a, a.work-with-us-a:visited{
+  color:white;
+  text-decoration: none;
+}
+
+.work-with-us-a:hover {
+  text-decoration: none;
 }
 
 .work-with-us {
   border-style: solid;
-  padding: 10px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  padding-right: 16px;
+  padding-left: 16px;
   text-transform: uppercase;
   margin-top: 15px;
   font-size: 20px;
+  font-family: 'DINPro-Regular';
+}
+
+.work-with-us:hover {
+  color: #3e3e3e;
+  background-color: white;  
+  border-color: white;
+  cursor: pointer;
+  text-decoration: none;
 }
 
 /********************************** HOW WE WORK **********************************/
@@ -165,6 +200,10 @@ span {
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 20px;
+}
+
+.hww-title {
+  font-size: 48px;
 }
 
 .hww-subtitle {
@@ -267,6 +306,7 @@ span {
   /* Starting opacity */
   opacity: 1.0;
 }
+
 .hww-text-inner.fadeimg-leave.fadeimg-leave-active {
   /* Ending opacity: 
   Trigger opacity change so the "transitionend" event will fire, causing React to remove from the DOM. */
@@ -277,17 +317,16 @@ span {
 .process-slider-inside-container {
   height: 350px;
 }
+
 .hww-text-title {
   font-family: 'DINPro-Medium';
   margin-bottom: 25px;
-
 }
 
 .hww-text-text {
   font-size: 15px;
   line-height: 1.7;
 }
-
 
 .hww-arrow-container {
   position: absolute;
@@ -333,6 +372,27 @@ span {
   position: relative;
 }
 
+.p-content {
+  position: relative;
+}
+.p-overlay {
+  /*display: none;*/
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  zIndex: 100;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s, opacity 0.5s linear;
+}
+.p-content:hover .p-overlay {
+  /*display: block;*/
+  visibility: visible;
+  opacity: 1;
+}
+
 .portfolio-img {
   margin: 20px;
   float: left;
@@ -349,30 +409,39 @@ span {
 }
 
 .portfolio-our-work {
-  font-size: 40px;
-  color: green;
+  font-size: 62px;
+  color: #00c964;
 }
 
 .portfolio-our-work-sub {
-  font-size: 15px;
+  font-size: 20px;
   color: white;
 }
 
 .portfolio-client-cont {
-  margin-top: 50px;
+  margin-top: 80px;
   width: 80vw;
   margin-right: auto;
   margin-left: auto;
-  height: 800px;
+  /*height: 800px;*/
+  padding-bottom: 50px;
   text-align: center;
   color: white;
 }
+
+.portfolio-row-cont {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+}
+
 .portfolio-client-logo-cont {
   width: 30%;
   float: left;
 }
 .portfolio-logo-img {
-  
+  width: 300px;
 }
 
 /******************************** Testimonials ********************************/
@@ -380,6 +449,10 @@ span {
   width: 100%;
   height: 90vh;
   background-color: white;
+}
+
+.testimonials-title {
+  font-size: 48px;
 }
 
 .testimonial-slider-container {
@@ -428,6 +501,97 @@ span {
 .testimonial-company {
   font-style: italic;
 }
+
+/* Dots */
+.slick-dotted.slick-slider
+{
+    margin-bottom: 30px;
+}
+
+.testimonial-dots
+{
+    position: absolute;
+    bottom: -65px;
+
+    display: block;
+
+    width: 100%;
+    padding: 0;
+    margin: 0;
+
+    list-style: none;
+
+    text-align: center;
+}
+.testimonial-dots li
+{
+    position: relative;
+
+    display: inline-block;
+
+    width: 20px;
+    height: 20px;
+    margin: 0 5px;
+    padding: 0;
+
+    cursor: pointer;
+}
+.testimonial-dots li button
+{
+    font-size: 0;
+    line-height: 0;
+
+    display: block;
+
+    width: 20px;
+    height: 20px;
+    padding: 5px;
+
+    cursor: pointer;
+
+    color: transparent;
+    border: 0;
+    outline: none;
+    background: transparent;
+}
+.testimonial-dots li button:hover,
+.testimonial-dots li button:focus
+{
+    outline: none;
+}
+.testimonial-dots li button:hover:before,
+.testimonial-dots li button:focus:before
+{
+    opacity: 1;
+}
+.testimonial-dots li button:before
+{
+    font-family: 'slick';
+    font-size: 12px;
+    line-height: 20px;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 20px;
+    height: 20px;
+
+    content: '•';
+    text-align: center;
+
+    opacity: .25;
+    color: black;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.testimonial-dots li.slick-active button:before
+{
+    opacity: .75;
+    color: black; /*SANTI*/
+}
+
 /******************************** Team ********************************/
 .team-container {
   width: 100%;
@@ -437,7 +601,7 @@ span {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  background-position: 0px -275px;
+  background-position: 0px -270px;
   background-repeat: no-repeat;
 }
 
@@ -468,6 +632,11 @@ span {
   font-size: 18px;
 }
 
+a.team-button-a, a.team-button-a:visited{
+  color:white;
+  text-decoration: none;
+}
+
 .team-button {
   font-family:'DINPro-Regular';
     border-style: solid;
@@ -481,6 +650,14 @@ span {
     float: left;
 }
 
+.team-button:hover {
+  color: #3e3e3e;
+  background-color: white;  
+  border-color: white;
+  cursor: pointer;
+
+}
+
 .team-middle-button {
   width: 5%;
   float: left;
@@ -492,6 +669,8 @@ span {
 .contact-container {
   width: 100%;
   height: 100vh;
+  background-color: #F0F0F0;
+  position: relative;
 }
 
 .contact-container-caption {
@@ -507,6 +686,13 @@ span {
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 20px;
+}
+
+.contact-title {
+  font-size: 48px;
+  margin-top: 0px;
+  padding-top: 20px;
+
 }
 
 .contact-subtitle {
@@ -539,12 +725,17 @@ span {
 
 .contact-input-text {
   height: 35px;
+  padding-left: 10px;
+  border-color: transparent;
 }
 
 .contact-textarea {
-  width: 392px;
+  width: 400px;
   height: 130px;
   resize: none;
+  padding-left: 10px;
+  padding-top: 5px;
+  border-color: transparent;
 }
 
 .contact-button-container {
@@ -555,8 +746,9 @@ span {
 }
 
 .contact-send-button {
+  border:none;
   color: white;
-  background-color: green;
+  background-color: #00C964;
   height: 45px;
   text-transform: uppercase;
   width: 75px;
@@ -579,9 +771,18 @@ span {
 }
 
 /******************** FOOTER ***********************/
+
+.footer {
+  bottom: 0px;
+  width: 100%;
+  height: 20px;
+  position: absolute;
+  padding: 40px;
+}
+
 .f-icon-img {
-  width: 20px;
-  height: 20px; 
+  width: 25px;
+  height: 25px; 
 }
 .footer-xseed { 
   float: left;
@@ -589,3 +790,396 @@ span {
 .footer-medias { 
   float: right;
 }
+
+
+/***************************** Media Querys **********************************/
+
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: white;
+}
+
+.navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover {
+  background-color: transparent;  
+}
+
+.navbar-default .navbar-toggle {
+  border-color: transparent;
+}
+
+.navbar-default .navbar-collapse, .navbar-default .navbar-form {
+  border-color: transparent;
+  background-color: black;
+}
+
+@media (max-width:480px) {
+  
+  /*************************** HEADER SECTION **********************/
+  .navbar-brand {
+    padding-top: 0;
+  }
+
+  .video {
+    display: none;
+  }
+
+  .video-caption {    
+    margin-top: 60px;
+    top: 0; 
+    left: 0; 
+    -webkit-transform: none; 
+    -ms-transform: none;
+    transform: none; 
+  }
+
+  #video-home .overlay {
+    background: url('./images/teamHome_BG.png');
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-position: 0px 0px;
+    background-repeat: no-repeat;
+  }
+
+  .bigHeader {
+    font-size: 45px;
+  }
+
+  /********************* HOW WE WORK ************************/
+  .hww-caption {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .hww-container-caption {
+    margin-bottom: 10px;
+  }
+
+  .hww-bottom {
+    width: 100%;
+    text-align: center;
+  }
+
+  .hww-img-container {
+    width: 250px;
+    float: none;
+    height: 250px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hww-img {    
+    position: absolute;
+    width: 250px;
+  }
+
+  .hww-img-inline {
+    cursor: pointer;
+    display: block;
+    position: absolute;
+    width: 190px;
+    top: 35px;
+    left: 35px;
+  }
+  
+  .hww-text {    
+    float: none;
+    width: 90%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;  
+    height: 150px;
+    position: relative;
+  }
+
+  .hww-subtitle {
+    font-size: 16px;
+  }
+
+  .hww-text-title {
+    font-size: 25px;
+    margin-bottom: 0px;
+  }
+
+  .hww-text-text {
+    font-size: 10px;
+
+  }
+
+  .hww-arrow-container {
+    left: 0;
+    right: 0;
+  }
+
+  .hww-arrow {
+    float: none;    
+  }
+
+  /******************* PORTFOLIO *********************/
+
+  #portfolio-project-title {
+    position: absolute;
+    display: block;
+    margin-top: -150px;
+    left: 0;
+    right: 0;
+    text-align: center;
+  }
+
+  .portfolio-projects {
+    -webkit-column-count: 1;
+    -moz-column-count: 1;
+    column-count: 1;
+
+    padding-top: 150px;
+
+    /*-webkit-column-gap: 0;
+    -moz-column-gap: 0;
+    column-gap: 0;
+    width: 80vw;
+    margin-right: auto;
+    margin-left: auto;*/
+  }
+
+  .portfolio-our-work {
+    font-size: 45px;
+  }
+
+  .portfolio-our-work-sub {
+    font-size: 15px;
+  }
+  
+  .portfolio-project-container {
+    
+    margin-top: 15px;
+    
+  }
+
+  .portfolio-img {
+    margin: 0; 
+  }
+
+  .p-overlay {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .portfolio-project-name {
+    left: 15px;
+    bottom: 0px;
+    top: initial;
+  }
+
+  .portfolio-client-cont-title {
+    font-size: 18px;
+  }
+
+  .portfolio-row-cont {
+    flex-direction: column;
+
+  }
+
+  .portfolio-client-logo-cont {
+    width: 100%
+  }
+
+  .portfolio-logo-img {
+    width: 235px;
+  }
+  
+  /******************* TESTIMONIALS ************/
+  .contact-subtitle {
+    font-size: 16px;
+  }
+  
+  .testimonial-div-image {
+    float: none;
+    width: 90%;
+  }
+
+  .testimonial-div-text {
+    width: 90%;
+    float: none;
+    font-size: 10px;
+    text-align: center;
+    padding-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .testimonial-inside-slider {
+    width: 90%;
+  }
+
+  .testimonial-dots {
+    bottom: -15px;
+  }
+
+  .testimonial-break-line {
+    display: none;
+  }
+
+  /******************* TEAM ****************/
+  .team-caption {
+    top: 0; 
+    left: 0; 
+    -webkit-transform: none; 
+    -ms-transform: none;
+    transform: none; 
+
+    padding-top: 30px;
+  }
+
+  .team-bigHeader {
+    font-size: 45px;
+    margin-bottom: 0px;
+  }
+
+  .team-smallHeader {
+    font-size: 16px;
+  }
+
+  .team-container {
+    background-position: 0px 0px;
+  }
+
+  .team-button {
+    float: none; 
+    margin-left: auto;
+    margin-right: auto;
+    width: 48%;
+  }
+
+  .team-middle-button {
+    float: none;
+    width: auto;
+  }
+
+  /***************  CONTACT **************/
+  .contact-form {
+    width: 90%;
+  }
+
+  .contact-name {
+    width: 100%;
+    float: none;
+    margin-bottom: 15px;
+  }
+
+  .contact-email {
+    width: 100%;
+    float: none;
+    margin-bottom: 15px;
+  }
+
+  .contact-input-text {
+    width: 80%;
+  }
+
+  .contact-message {
+    padding-top: 0px;
+
+  }
+
+  .contact-textarea {
+    width: 80%;
+  }
+
+  .contact-button-container {
+    padding-right: 0;
+    text-align: center;
+  }
+
+  /************* FOOTER ***************/
+  .footer {
+    bottom: 40px;
+    text-align: center;
+  }
+
+  .footer-xseed {
+    float: none;
+  }
+
+  .footer-medias {
+    float: none;
+  }
+}
+
+
+
+/********************* TEAM PAGE *********************/
+
+.tp-header-container {
+  
+  width: 100%;
+  height: 87vh;
+  
+}
+
+.tp-caption-container {
+  position: absolute;
+  background: url('./images/teamHome_BG.png');
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-position: 0px -245px;
+  background-repeat: no-repeat;
+
+  color: white;
+  text-align: center;
+  width: 100%;
+  height: 90%;
+  top: 0px;
+}
+
+.tp-caption {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.tp-bigHeader {
+  font-size: 60px;
+  font-family: 'DINPro-Bold';
+  margin-bottom: 0px;
+  margin-top: 20px;
+}
+
+.tp-smallHeader {
+  font-size: 18px;
+  margin-top: 10px
+}
+
+.flex-container {
+  padding: 50px;
+  padding-left: 100px;
+  padding-right: 100px;
+  margin: 0;
+  list-style: none;
+  
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  
+  -webkit-flex-flow: row wrap;
+  justify-content: space-around;
+}
+
+.flex-item {
+  background: tomato;
+  padding: 5px;
+  width: 300px;
+  height: 350px;
+  margin-top: 10px;
+  
+  line-height: 150px;
+  color: white;
+  font-weight: bold;
+  font-size: 3em;
+  text-align: center;
+}
+

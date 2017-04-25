@@ -21,10 +21,9 @@ const Footer = (props) => {
 					<img className="f-icon-img" alt="instagram" src={instagram} draggable="false" /> 
 				</a>
 
-				<a href="https://twitter.com/xseedSF" target="_blank" >
+				<a href="https://twitter.com/XseedSF/" target="_blank" >
 					<img className="f-icon-img" alt="twitter" src={twitter} draggable="false" /> 
 				</a>
-				
 			</div>
 		</div>
 	)

@@ -29,135 +29,27 @@ let texts = [
 	`Launch is a critical time, and we take care every aspect, solving any road block strategically. When your project goes live and the user-base grows, we are standing by to provide any additional support your product might need. Making your business grow, is our business too.`,
 	`The only missing step is where you come in. Got doubts, questions or an amazing project you want to shoot into the skies? We want to hear from you. `];
 
-
 class ProcessImage extends Component {
-  constructor(props) {
-    super(props)
-    this.next = this.next.bind(this)
-    this.previous = this.previous.bind(this)
-  }
-  next() {
-    this.slider.slickNext()
-  }
-  previous() {
-    this.slider.slickPrev()
-  }
-  render () {
-    const settings = {
-      dots: true,
-      infinite: true,
-      slidesToShow: 1,
-      slidesToScroll: 1,
-      autoplay: true,
-      autoplaySpeed: 5000,
-      adaptiveHeight: true,
-      speed: 2000,
-      fade: true,
-      dots: false
-    };
-    return (
-      <div>
-        
-        <Slider ref={c => this.slider = c } {...settings}>
-          <div className="process-slider-inside-container"> 
-            <HowWeWorkStep image={img1} inlineImage={imgInline1}
-              title={titles[0]} text={texts[0]}
-              onPreviousClick={this.previous}
-              onNextClick={this.next}
-            /> 
-          </div>
-          <div className="process-slider-inside-container"> 
-            <HowWeWorkStep image={img2} inlineImage={imgInline2}                        
-              title={titles[1]} text={texts[1]}
-              onPreviousClick={this.previous}
-              onNextClick={this.next}
-            /> 
-          </div>
-          <div className="process-slider-inside-container"> 
-            <HowWeWorkStep image={img3} inlineImage={imgInline3}
-              title={titles[2]} text={texts[2]}
-              onPreviousClick={this.previous}
-              onNextClick={this.next}
-            /> 
-          </div>
-          <div className="process-slider-inside-container"> 
-            <HowWeWorkStep image={img4} inlineImage={imgInline4}
-              title={titles[3]} text={texts[3]}
-              onPreviousClick={this.previous}
-              onNextClick={this.next}
-            /> 
-          </div>
-          <div className="process-slider-inside-container"> 
-            <HowWeWorkStep image={img5} inlineImage={imgInline5}
-              title={titles[4]} text={texts[4]}
-              onPreviousClick={this.previous}
-              onNextClick={this.next}
-            /> 
-          </div>
-          <div className="process-slider-inside-container"> 
-            <HowWeWorkStep image={img6} inlineImage={imgInline6}
-              title={titles[5]} text={texts[5]}
-              onPreviousClick={this.previous}
-              onNextClick={this.next}
-            /> 
-          </div>          
-        </Slider>
-      </div>
-    );
-  }
-}
-
-const HowWeWorkStep = (props) => {
-    return ( 
-        <div className="hww-bottom">
-            <div className="hww-img-container">
-                <img className="hww-img" 
-                alt="How we work" src={props.image} /*onClick={this.nextStep}*/ draggable="false" />
-                <img className="hww-img-inline" /*key={this.state.index}*/
-                    alt="How we work" src={props.inlineImage} /*onClick={this.nextStep}*/ draggable="false" />
-            </div>
-            <div className="hww-text">                
-                <div className="hww-text-inner" /*key={this.state.index}*/>
-                    <h1 className="hww-text-title">{props.title}</h1>
-                    <p className="hww-text-text">{props.text}</p>              
-                </div>
-                <div className="hww-arrow-container">
-                    <img className="hww-arrow" 
-                          src={arrowBefore} 
-                          draggable="false"
-                          onClick={props.onPreviousClick} /> 
-                    <img className="hww-arrow" 
-                          src={arrowNext} 
-                          draggable="false" 
-                          onClick={props.onNextClick} />
-                </div>
-            </div>
-        </div>
-    )
-}
-
-export default ProcessImage;
-
-/*class ProcessImage extends Component {
-    state = {
-    	on: false,
+  state = {
+  	on: false,
 		index: 1,
 		items: [img1],
 		inlineImg: imgInline1,
 		title: titles[0],
 		text: texts[0],
-		clicked: false
+		//clicked: false
 	} 
 	toggleOn = () => {
-		this.setState({ on: !this.state.on })
+    console.log('toggleOn called, value prev: ', this.state.on);
+	 	this.setState({ on: !this.state.on })
 	}
-    nextStep = (e) => {
-    	if(e) {
-    		//Fue un click
-    		this.setState({ clicked: true });
-    	}
-    	if(this.state.on)
-    		return;
+  nextStep = (e) => {
+  	/*if(e) {
+  		//Fue un click
+  		this.setState({ clicked: true });
+  	}*/
+  	if(this.state.on)
+  		return;
 		let newIndex = this.state.index + 1;
 		let currentItems = this.state.items;
 		if(newIndex > 6) {
@@ -204,21 +96,21 @@ export default ProcessImage;
         	text: texts[newIndex-1],
         	on: true
         });
-        this.props.setTimeout(this.toggleOn, 1550);
+      this.props.setTimeout(this.toggleOn, 1550);
     }
     previousStep = (e) => {
-    	if(e) {
+    	/*if(e) {
     		//Fue un click
     		this.setState({ clicked: true });
-    	}
+    	}*/
     	if(this.state.on)
     		return;
 
-		let newIndex = this.state.index - 1;
-		let currentItems = this.state.items;
-		currentItems.pop()
-		
-		let newImg, newInline;
+  		let newIndex = this.state.index - 1;
+  		let currentItems = this.state.items;
+  		currentItems.pop()
+  		
+  		let newImg, newInline;
     	switch(newIndex) {
     		case 1:    			
     			newInline = imgInline1;
@@ -240,69 +132,72 @@ export default ProcessImage;
     			break;
     	} 
 	    this.setState({
-        	index: newIndex,
-        	items: currentItems,
-        	inlineImg: newInline,
-        	title: titles[newIndex-1],
-        	text: texts[newIndex-1]
-        });
-        this.props.setTimeout(this.toggleOn, 1550);
-    }
-    loopOnItsOwn = () => {
-    	console.log('loop on its own called');
-    	if(!this.state.clicked) {
-    		this.nextStep();
-    		this.props.setTimeout(this.loopOnItsOwn, 5000);
-    	}
-    }
-    componentDidMount(){
-    	this.props.setTimeout(this.loopOnItsOwn, 5000);
-    }
-    render() {
-        
-		const items = this.state.items.map((item, i) => (
-			<img className="hww-img" 
-	     		alt="How we work" src={item} onClick={this.nextStep} draggable="false" />
-	    ));
+      	index: newIndex,
+      	items: currentItems,
+      	inlineImg: newInline,
+      	title: titles[newIndex-1],
+      	text: texts[newIndex-1],
+        on: true
+      });
+      this.props.setTimeout(this.toggleOn, 1550);
+  }
+  /*loopOnItsOwn = () => {
+  	console.log('loop on its own called');
+  	if(!this.state.clicked) {
+  		this.nextStep();
+  		this.props.setTimeout(this.loopOnItsOwn, 5000);
+  	}
+  }*/
+  componentDidMount(){
+  	//this.props.setTimeout(this.loopOnItsOwn, 5000);
+  }
+  render() {
+      
+	const items = this.state.items.map((item, i) => (
+      <img className="hww-img" 
+     		alt="How we work" src={item} onClick={this.nextStep} draggable="false" />
+    ));
 
-	    const texts = this.state.items.map((item, i) => (
-			<img className="hww-img" 
-	     		alt="How we work" src={item} onClick={this.nextStep} draggable="false" />
-	    ));	 
+    const texts = this.state.items.map((item, i) => (
+	    <img className="hww-img" 
+     		alt="How we work" src={item} onClick={this.nextStep} draggable="false" />
+    ));	 
 
-	    let classNameBackArrow = this.state.index > 1 ? 'hww-arrow' : 'hww-arrow-hidden';
+    //let classNameBackArrow = this.state.index > 1 ? 'hww-arrow' : 'hww-arrow-hidden';
 
-        return (
-        	<div className="hww-bottom">
-		    	<div className="hww-img-container">
-		            <ReactCSSTransitionGroup transitionName="fadeimg">	            	
-		            	{items}
-		            </ReactCSSTransitionGroup>
-		            <ReactCSSTransitionGroup transitionName="fadeimg">	            	
-		            	<img className="hww-img-inline" key={this.state.index}
-		     		alt="How we work" src={this.state.inlineImg} onClick={this.nextStep} draggable="false" />
-		            </ReactCSSTransitionGroup>
-		     	</div>
-		     	<div className="hww-text">
-			     	<ReactCSSTransitionGroup transitionName="fadeimg">
-			     		<div className="hww-text-inner" key={this.state.index}>
-					    	<h1 className="hww-text-title">{this.state.title}</h1>
-			     			<p className="hww-text-text">{this.state.text}</p>  			
-			     		</div>
-		     		</ReactCSSTransitionGroup>
-		     		<div className="hww-arrow-container">
-		     			<img className={classNameBackArrow} 
-								src={arrowBefore} 
-								draggable="false"
-								onClick={this.previousStep}/> 
-		     			<img src={arrowNext} draggable="false" onClick={this.nextStep}/>
+    return (
+    	<div className="hww-bottom">
+	    	<div className="hww-img-container">
+	            <ReactCSSTransitionGroup transitionName="fadeimg">	            	
+	            	{items}
+	            </ReactCSSTransitionGroup>
+	            <ReactCSSTransitionGroup transitionName="fadeimg">	            	
+	            	<img className="hww-img-inline" key={this.state.index}
+                  alt="How we work" src={this.state.inlineImg} onClick={this.nextStep} draggable="false" />
+	            </ReactCSSTransitionGroup>
+	     	</div>
+	     	<div className="hww-text">
+		     	<ReactCSSTransitionGroup transitionName="fadeimg">
+		     		<div className="hww-text-inner" key={this.state.index}>
+				    	<h1 className="hww-text-title">{this.state.title}</h1>
+		     			<p className="hww-text-text">{this.state.text}</p>  			
 		     		</div>
-		     		
-		     	</div>
-         	</div>
-        );
-            
-    }
+	     		</ReactCSSTransitionGroup>
+	     		<div className="hww-arrow-container">
+	     			<img className="hww-arrow" 
+						      src={arrowBefore} 
+				          draggable="false"
+						      onClick={this.previousStep}/> 
+	     			<img className="hww-arrow"
+                  src={arrowNext} 
+                  draggable="false" 
+                  onClick={this.nextStep}/>
+	     		</div>
+	     		
+	     	</div>
+     	</div>
+    );          
+  }
 };
 
-export default ReactTimeout(ProcessImage);*/
+export default ReactTimeout(ProcessImage);

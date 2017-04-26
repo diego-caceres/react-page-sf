@@ -48,6 +48,10 @@ span {
 }
 /**************************** HEADER SECTION **************************************/
 
+.nav>li>a {
+  padding: 10px 10px;
+}
+
 .headerSection-cover {
   width: 100%;
   height: 95vh;
@@ -115,13 +119,13 @@ span {
   text-align: center;
   width: 100%;
   height: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .video-caption {
-  position: absolute;
-  top: 50%; 
-  /*left: 50%;*/
-  transform: translate(50%,-50%);
+  
 }
 
 
@@ -429,10 +433,9 @@ a.work-with-us-a, a.work-with-us-a:visited{
   color: white;
 }
 
-.portfolio-row-cont {
+.portfolio-client-list-cont {
   display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
+  -webkit-flex-flow: row wrap;
   justify-content: center;
 }
 
@@ -466,6 +469,9 @@ a.work-with-us-a, a.work-with-us-a:visited{
   width: 80%;
   margin-left: auto;
   margin-right: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
 .testimonial-img-circle {
@@ -473,6 +479,8 @@ a.work-with-us-a, a.work-with-us-a:visited{
   width: 250px;
   height: 250px;
   border: 5px solid green;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .testimonial-div-image { 
@@ -601,7 +609,7 @@ a.work-with-us-a, a.work-with-us-a:visited{
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  background-position: 0px -270px;
+  background-position: 0px 0px;
   background-repeat: no-repeat;
 }
 
@@ -612,15 +620,18 @@ a.work-with-us-a, a.work-with-us-a:visited{
   text-align: center;
   width: 100%;
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .team-caption {
-    position: absolute;
+    /*position: absolute;
     top: 50%;
     left: 50%;
     -webkit-transform: translate(-50%,-50%);
     -ms-transform: translate(-50%,-50%);
-    transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);*/
 }
 
 .team-bigHeader {
@@ -630,6 +641,11 @@ a.work-with-us-a, a.work-with-us-a:visited{
 
 .team-smallHeader {
   font-size: 18px;
+}
+
+.team-button-container {
+  display: flex;
+  justify-content: center;
 }
 
 a.team-button-a, a.team-button-a:visited{
@@ -644,9 +660,9 @@ a.team-button-a, a.team-button-a:visited{
     text-transform: uppercase;
     margin-top: 15px;
     font-size: 20px;
-    margin-right: 25px;
-    margin-left: 25px;
-    width: 37%;
+    padding-left: 20px;
+    padding-right: 20px;
+    width: 100%;
     float: left;
 }
 
@@ -663,6 +679,10 @@ a.team-button-a, a.team-button-a:visited{
   float: left;
   margin-top: 25px;
   font-size: 20px;
+}
+
+.t-hiddenClass {
+  display: none;
 }
 
 /******************************** Contact ********************************/
@@ -793,10 +813,7 @@ a.team-button-a, a.team-button-a:visited{
 
 
 /***************************** Media Querys **********************************/
-
-
-@media (max-width:480px) {
-  
+@media (max-width: 768px) {
   .navbar-default .navbar-toggle .icon-bar {
     background-color: white;
   }
@@ -814,7 +831,90 @@ a.team-button-a, a.team-button-a:visited{
     background-color: black;
   }
 
-  /*************************** HEADER SECTION **********************/
+  /********* HOME 768 **********/
+
+  #video-home .overlay {
+    background: url('./images/teamHome_BG.png');
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-position: 0px 0px;
+    background-repeat: no-repeat;
+  }
+
+  /************* HWW 768 *******************/
+  .hww-bottom {
+    width: 90%;
+  }
+
+  .hww-img-container {
+    width: 250px;
+    height: 250px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hww-img {    
+    position: absolute;
+    width: 250px;
+  }
+
+  .hww-img-inline {
+    cursor: pointer;
+    display: block;
+    position: absolute;
+    width: 190px;
+    top: 35px;
+    left: 35px;
+  }
+
+  /************** PORTFOLIO ******************/
+
+  .portfolio-client-list-cont {
+    justify-content: flex-start;
+  }
+
+  .portfolio-client-logo-cont {
+    width: 50%;
+  }
+
+  /************* TESTIMONIALS 768 *******************/
+  .testimonial-div-image {
+    float: none;
+    width: 100%;
+    padding-right: 0;
+  }
+
+  .testimonial-div-text {
+    width: 90%;
+    float: none;
+    font-size: 10px;
+    text-align: center;
+    padding-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .testimonial-inside-slider {
+    width: 90%;
+    flex-direction: column;
+  }
+
+  .testimonial-dots {
+    bottom: -15px;
+  }
+
+  .testimonial-break-line {
+    display: none;
+  }
+}
+
+@media (max-width:480px) {
+  
+  
+
+  /*************************** HEADER SECTION 480 **********************/
   .navbar-brand {
     padding-top: 0;
   }
@@ -846,7 +946,7 @@ a.team-button-a, a.team-button-a:visited{
     font-size: 45px;
   }
 
-  /********************* HOW WE WORK ************************/
+  /********************* HOW WE WORK 480 ************************/
   .hww-caption {
     padding-left: 10px;
     padding-right: 10px;
@@ -889,7 +989,7 @@ a.team-button-a, a.team-button-a:visited{
     text-align: center;
     margin-left: auto;
     margin-right: auto;  
-    height: 150px;
+    height: 195px;
     position: relative;
   }
 
@@ -903,7 +1003,7 @@ a.team-button-a, a.team-button-a:visited{
   }
 
   .hww-text-text {
-    font-size: 10px;
+    font-size: 15px;
 
   }
 
@@ -916,7 +1016,7 @@ a.team-button-a, a.team-button-a:visited{
     float: none;    
   }
 
-  /******************* PORTFOLIO *********************/
+  /******************* PORTFOLIO 480 *********************/
 
   #portfolio-project-title {
     position: absolute;
@@ -976,11 +1076,6 @@ a.team-button-a, a.team-button-a:visited{
     font-size: 18px;
   }
 
-  .portfolio-row-cont {
-    flex-direction: column;
-
-  }
-
   .portfolio-client-logo-cont {
     width: 100%
   }
@@ -989,39 +1084,14 @@ a.team-button-a, a.team-button-a:visited{
     width: 235px;
   }
   
-  /******************* TESTIMONIALS ************/
+  /******************* TESTIMONIALS 480  ************/
   .contact-subtitle {
     font-size: 16px;
   }
   
-  .testimonial-div-image {
-    float: none;
-    width: 90%;
-  }
+  
 
-  .testimonial-div-text {
-    width: 90%;
-    float: none;
-    font-size: 10px;
-    text-align: center;
-    padding-top: 20px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .testimonial-inside-slider {
-    width: 90%;
-  }
-
-  .testimonial-dots {
-    bottom: -15px;
-  }
-
-  .testimonial-break-line {
-    display: none;
-  }
-
-  /******************* TEAM ****************/
+  /******************* TEAM 480 ****************/
   .team-caption {
     top: 0; 
     left: 0; 
@@ -1045,6 +1115,10 @@ a.team-button-a, a.team-button-a:visited{
     background-position: 0px 0px;
   }
 
+  .team-button-container  {
+    flex-direction: column;
+  }
+
   .team-button {
     float: none; 
     margin-left: auto;
@@ -1057,7 +1131,11 @@ a.team-button-a, a.team-button-a:visited{
     width: auto;
   }
 
-  /***************  CONTACT **************/
+  .t-hiddenClass {
+    display: block;
+  }
+
+  /***************  CONTACT 480 **************/
   .contact-form {
     width: 90%;
   }
@@ -1092,7 +1170,7 @@ a.team-button-a, a.team-button-a:visited{
     text-align: center;
   }
 
-  /************* FOOTER ***************/
+  /************* FOOTER 480 ***************/
   .footer {
     bottom: 40px;
     text-align: center;

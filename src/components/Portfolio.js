@@ -5,6 +5,18 @@ import brand1 from '../images/brand01.png';
 import brand2 from '../images/brand02.png';
 import brand3 from '../images/brand03.png';
 
+const Brands = [
+  { image: require('../images/brand01.png') },
+  { image: require('../images/brand02.png') },
+  { image: require('../images/brand03.png') },
+  { image: require('../images/brand02.png') },
+  { image: require('../images/brand01.png') },
+  { image: require('../images/brand03.png') },
+  { image: require('../images/brand03.png') },
+  { image: require('../images/brand02.png') },
+  { image: require('../images/brand01.png') }
+];
+
 const Portfolio = () => (
 	<section className="portfolio-container">
 		<div className="portfolio-projects">
@@ -53,50 +65,15 @@ const Portfolio = () => (
 		<div className="clear"> </div>
 		<div className="portfolio-client-cont">
 			<h2 className="portfolio-client-cont-title"> Other clients we're very proud of</h2>
-			<div className="portfolio-row-cont">
-				<div className="portfolio-client-logo-cont">
-					<img className="portfolio-logo-img" 
-		     		alt="How we work" src={brand1} draggable="false" />
-				</div>
-				<div className="portfolio-client-logo-cont">
-					<img className="portfolio-logo-img" 
-		     		alt="How we work" src={brand2} draggable="false" />
-				</div>
-				<div className="portfolio-client-logo-cont">
-					<img className="portfolio-logo-img" 
-		     		alt="How we work" src={brand3} draggable="false" />
-				</div>
+			<div className="portfolio-client-list-cont">
+				{Brands.map((brand) => 
+					<div className="portfolio-client-logo-cont">
+						<img className="portfolio-logo-img" 
+		     				alt="How we work" src={brand.image} draggable="false" />
+					</div>
+				)}
 			</div>
-
-			<div className="portfolio-row-cont">
-				<div className="portfolio-client-logo-cont">
-					<img className="portfolio-logo-img" 
-		     		alt="How we work" src={brand2} draggable="false" />
-				</div>
-				<div className="portfolio-client-logo-cont">
-					<img className="portfolio-logo-img" 
-		     		alt="How we work" src={brand2} draggable="false" />
-				</div>
-				<div className="portfolio-client-logo-cont">
-					<img className="portfolio-logo-img" 
-		     		alt="How we work" src={brand1} draggable="false" />
-				</div>
-			</div>
-
-			<div className="portfolio-row-cont"> 
-				<div className="portfolio-client-logo-cont">
-					<img className="portfolio-logo-img" 
-		     		alt="How we work" src={brand1} draggable="false" />
-				</div>
-				<div className="portfolio-client-logo-cont">
-					<img className="portfolio-logo-img" 
-		     		alt="How we work" src={brand3} draggable="false" />
-				</div>
-				<div className="portfolio-client-logo-cont">
-					<img className="portfolio-logo-img" 
-		     		alt="How we work" src={brand2} draggable="false" />
-				</div>
-			</div>
+		
 		</div>
 	</section>
 );

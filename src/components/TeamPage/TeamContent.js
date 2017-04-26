@@ -9,6 +9,9 @@ const TeamContent = () => (
 		  <li className="flex-item">4</li>
 		  <li className="flex-item">5</li>
 		  <li className="flex-item">6</li>
+		  <li className="flex-item">7</li>
+		  <li className="flex-item">8</li>
+		  <li className="flex-item">9</li>
 		</ul>
     </div>
 )

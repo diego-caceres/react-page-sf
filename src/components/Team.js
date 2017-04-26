@@ -12,10 +12,8 @@ const Team = () => (
                 <p className="team-smallHeader">team is our most valuable asset.</p>
                 <br/><br/>
                 <div className="team-button-container"> 
-                    <Link className="team-button-a" to={'/team#home'}>
-                        
-                            <p className="team-button"> Meet Them </p>
-                        
+                    <Link className="team-button-a" to={'/team#home'}>                        
+                        <p className="team-button"> Meet Them </p>                
                     </Link>
                     <div className="clear t-hiddenClass" />
                     <p className="team-middle-button"> or </p>

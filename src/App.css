@@ -113,7 +113,7 @@ span {
 }
 
 .video-caption-container {
-  z-index: 10;
+  z-index: 7;
   position: relative;
   color: white;
   text-align: center;
@@ -832,6 +832,11 @@ a.team-button-a, a.team-button-a:visited{
     background-color: black;
   }
 
+  .navbar-default .navbar-collapse, .navbar-default .navbar-form {
+    position: absolute;
+    width: 100%;
+  }
+
   /********* HOME 768 **********/
 
   #video-home .overlay {
@@ -1090,6 +1095,10 @@ a.team-button-a, a.team-button-a:visited{
     font-size: 16px;
   }
   
+  .testimonial-text, .testimonial-name, .testimonial-company {
+    margin-bottom: 5px;
+  }
+
   
 
   /******************* TEAM 480 ****************/
@@ -1187,80 +1196,4 @@ a.team-button-a, a.team-button-a:visited{
 }
 
 
-
-/********************* TEAM PAGE *********************/
-
-.tp-header-container {
-  
-  width: 100%;
-  height: 87vh;
-  
-}
-
-.tp-caption-container {
-  position: absolute;
-  background: url('./images/teamHome_BG.png');
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  background-position: 0px -245px;
-  background-repeat: no-repeat;
-
-  color: white;
-  text-align: center;
-  width: 100%;
-  height: 90%;
-  top: 0px;
-}
-
-.tp-caption {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.tp-bigHeader {
-  font-size: 60px;
-  font-family: 'DINPro-Bold';
-  margin-bottom: 0px;
-  margin-top: 20px;
-}
-
-.tp-smallHeader {
-  font-size: 18px;
-  margin-top: 10px
-}
-
-.flex-container {
-  padding: 50px;
-  padding-left: 100px;
-  padding-right: 100px;
-  margin: 0;
-  list-style: none;
-  
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  
-  -webkit-flex-flow: row wrap;
-  justify-content: space-around;
-}
-
-.flex-item {
-  background: tomato;
-  padding: 5px;
-  width: 300px;
-  height: 350px;
-  margin-top: 10px;
-  
-  line-height: 150px;
-  color: white;
-  font-weight: bold;
-  font-size: 3em;
-  text-align: center;
-}
 

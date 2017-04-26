@@ -435,6 +435,7 @@ a.work-with-us-a, a.work-with-us-a:visited{
 
 .portfolio-client-list-cont {
   display: flex;
+  flex-wrap: wrap;
   -webkit-flex-flow: row wrap;
   justify-content: center;
 }

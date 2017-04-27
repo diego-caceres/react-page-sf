@@ -1,0 +1,232 @@
+/********************* TEAM PAGE *********************/
+
+.tp-header-container {
+  
+  width: 100%;
+  height: 87vh;
+  
+}
+
+.tp-caption-container {
+  position: absolute;
+  background: url('./images/teamHome_BG.png');
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-position: 0px 0px;
+  background-repeat: no-repeat;
+
+  color: white;
+  text-align: center;
+  width: 100%;
+  height: 90%;
+  top: 0px;
+}
+
+.tp-caption {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.tp-bigHeader {
+  font-size: 60px;
+  font-family: 'DINPro-Bold';
+  margin-bottom: 0px;
+  margin-top: 20px;
+}
+
+.tp-smallHeader {
+  font-size: 18px;
+  margin-top: 10px
+}
+
+.flex-container {
+  padding: 50px;
+  padding-left: 100px;
+  padding-right: 100px;
+  margin: 0;
+  margin-left: 10%;
+  margin-right: 10%;
+  
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  
+  -webkit-flex-flow: row wrap;
+  justify-content: center;
+}
+
+.flex-item {
+  background: tomato;
+  
+  width: 250px;
+  height: 250px;
+  margin: 3px;
+  
+  color: white;
+  font-weight: bold;
+  font-size: 3em;
+  text-align: center;
+}
+
+.team-item-container {
+  width: 100%;
+  height: 100%;
+  float: left;
+  display: inline-block;
+  vertical-align: top;
+  position: relative;
+}
+
+.team-content {
+  position: relative;
+}
+.team-overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s, opacity 0.5s linear;
+}
+.team-content:hover .team-overlay { 
+  visibility: visible;
+  opacity: 0.7;
+}
+
+.team-img {
+  width: 100%;
+  height: 100%;
+}
+
+.team-member-badge {
+  position: absolute;
+  bottom: 10px;
+  left: 5%;
+  right: auto;
+  color: white;
+  background-color: green;
+  padding: 5px;
+  padding-left: 10px;
+  width: 90%;
+  text-align: left;
+}
+
+.team-member-name {
+  font-size: 16px;
+  padding: 0;
+  margin: 0;
+}
+
+.team-member-role {
+  font-size: 12px;
+  padding: 0;
+  margin: 0; 
+}
+
+.flex-item-hiring {
+  background: #00c260;
+}
+
+.team-item-hiring {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.team-text-hiring {
+  font-family: 'DINPro-Light';
+  font-size: 20px;
+  padding-left: 40px;
+  padding-right: 40px;
+  font-style: italic;
+}
+
+a.team-work-with-us-a, a.team-work-with-us-a:visited{
+  color:white;
+  text-decoration: none;
+}
+
+.team-work-with-us-a:hover {
+  text-decoration: none;
+}
+
+.team-work-with-us {
+  border-style: solid;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  padding-right: 16px;
+  padding-left: 16px;
+  text-transform: uppercase;
+  margin-top: 15px;
+  font-size: 20px;
+  font-family: 'DINPro-Regular';
+}
+
+.team-work-with-us:hover {
+  color: #3e3e3e;
+  background-color: white;  
+  border-color: white;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.flex-item-social {
+  background: #fff;
+}
+
+.team-text-social {
+  font-family: 'DINPro-Light';
+  font-size: 20px;
+  padding-left: 40px;
+  padding-right: 40px;
+  color: black;
+}
+
+.flex-item-contact {
+  background: #fff;
+}
+
+.team-text-contact {
+  font-family: 'DINPro-Light';
+  font-size: 20px;
+  padding-left: 40px;
+  padding-right: 40px;
+  color: black;
+}
+
+a.team-contact-a, a.team-contact-a:visited{
+  color:black;
+  text-decoration: none;
+}
+
+.team-contact-a:hover {
+  text-decoration: none;
+}
+
+.team-contact {
+  border-style: solid;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  padding-right: 16px;
+  padding-left: 16px;
+  text-transform: uppercase;
+  margin-top: 15px;
+  font-size: 20px;
+  font-family: 'DINPro-Regular';
+}
+
+.team-contact:hover {
+  color: white;
+  background-color: black;  
+  border-color: white;
+  cursor: pointer;
+  text-decoration: none;
+}
